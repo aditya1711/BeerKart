@@ -38,6 +38,7 @@ public class Start
         else if (cookies[i].getName().equals("budget"))
         {
           u.setBudget(cookies[i].getValue());
+          System.out.println("found cookie budget " + cookies[i].getValue());
         }
       }
     }

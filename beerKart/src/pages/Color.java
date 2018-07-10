@@ -21,7 +21,6 @@ public class Color
     throws ServletException, IOException
   {
     User user = (User)request.getSession().getAttribute("user");
-    System.out.println("entered color on form page: " + request.getParameter("color"));
     user.setColor(request.getParameter("color"));
     
     response.addCookie(new Cookie("color", user.getColor()));

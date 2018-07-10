@@ -24,7 +24,7 @@ public class Checkout
     user.setUsername(request.getParameter("username"));
     response.addCookie(new Cookie("username", user.getUsername()));
     request.setAttribute("username", request.getParameter("username"));
-    request.getRequestDispatcher("bye.jsp").forward(request, response);
+    request.getRequestDispatcher("bye.jsp").include(request, response);
     request.getSession().invalidate();
   }
   

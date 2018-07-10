@@ -19,8 +19,10 @@
 	 <br>
 	 <a href = "color.jsp"> Else proceed to selection </a>
 	
-	<% }else { out.println("proceed to selection");} %>
-	<a href = "color.jsp"> Proceed to selection </a>
+	<% }else { %> 
+		<a href = "color.jsp"> Proceed to selection </a>
+	<%} %>
+	
 	
 	<br>
 </body>
