@@ -19,17 +19,16 @@ public class Budget
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
   {
-    User user = (User)request.getSession().getAttribute("user");
-    user.setBudget(request.getParameter("budget"));
-    
-    response.addCookie(new Cookie("budget", user.getBudget()));
-    
-    response.sendRedirect("advice");
+    request.getRequestDispatcher("budget.jsp").forward(request, response);
   }
   
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
   {
-    doGet(request, response);
+	  User user = (User)request.getSession().getAttribute("user");
+	  user.setBudget(request.getParameter("budget")); 
+	  response.addCookie(new Cookie("budget", user.getBudget()));
+	  
+	  response.sendRedirect("advice");
   }
 }

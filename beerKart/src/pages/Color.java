@@ -20,17 +20,16 @@ public class Color
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
   {
-    User user = (User)request.getSession().getAttribute("user");
-    user.setColor(request.getParameter("color"));
-    
-    response.addCookie(new Cookie("color", user.getColor()));
-    
-    response.sendRedirect("budget.jsp");
+    request.getRequestDispatcher("/color.jsp").forward(request, response);
   }
   
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
   {
-    doGet(request, response);
+	User user = (User)request.getSession().getAttribute("user");
+	user.setColor(request.getParameter("color"));    
+	response.addCookie(new Cookie("color", user.getColor()));
+	
+	response.sendRedirect("budget");
   }
 }

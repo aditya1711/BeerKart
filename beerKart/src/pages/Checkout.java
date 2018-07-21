@@ -25,6 +25,7 @@ public class Checkout
     response.addCookie(new Cookie("username", user.getUsername()));
     request.setAttribute("username", request.getParameter("username"));
     request.getRequestDispatcher("bye.jsp").include(request, response);
+    System.out.println("back to checkout servlet after dispatch to bye.jsp");
     request.getSession().invalidate();
   }
   

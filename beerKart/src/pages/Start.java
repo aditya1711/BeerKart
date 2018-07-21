@@ -16,12 +16,13 @@ import javax.servlet.http.HttpSession;
 public class Start
   extends HttpServlet
 {
-  private User user;
+  
   private static final long serialVersionUID = 1L;
   
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
   {
+	User user;
     Cookie[] cookies = request.getCookies();
     User u = (User)request.getSession().getAttribute("user");
     if (cookies != null) {

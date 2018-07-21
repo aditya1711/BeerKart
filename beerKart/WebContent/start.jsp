@@ -17,10 +17,10 @@
 	 <br> Looking for a beer in <%= color %> with <%= budget %> price range? <br>
 	 <a href = "checkout.jsp"> YES </a>
 	 <br>
-	 <a href = "color.jsp"> Else proceed to selection </a>
+	 <a href = "color"> Else proceed to selection </a>
 	
 	<% }else { %> 
-		<a href = "color.jsp"> Proceed to selection </a>
+		<a href = "color"> Proceed to selection </a>
 	<%} %>
 	
 	
